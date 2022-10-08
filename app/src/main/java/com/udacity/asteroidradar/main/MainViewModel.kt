@@ -72,20 +72,4 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    fun onTodayAsteroidsClicked() {
-        viewModelScope.launch {
-            database.asteroidDao.getAsteroidsByCloseApproachDate(getToday(), getToday())
-                .collect { asteroids ->
-                    _asteroids.value = asteroids
-                }
-        }
-    }
-
-    fun onSavedAsteroidsClicked() {
-        viewModelScope.launch {
-            database.asteroidDao.getAllAsteroids().collect { asteroids ->
-                _asteroids.value = asteroids
-            }
-        }
-    }
 }

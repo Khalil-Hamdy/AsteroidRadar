@@ -72,17 +72,4 @@ class MainFragment : Fragment() {
         findNavController().navigate(MainFragmentDirections.actionShowDetail(asteroid))
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.main_overflow_menu, menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.view_week_asteroids_menu -> viewModel.onViewWeekAsteroidsClicked()
-            R.id.view_today_asteroids_menu -> viewModel.onTodayAsteroidsClicked()
-            R.id.view_saved_asteroids_menu -> viewModel.onSavedAsteroidsClicked()
-        }
-        return true
-    }
 }
